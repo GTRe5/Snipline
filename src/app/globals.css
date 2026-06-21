@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+/* Enables `dark:` variants driven by a `.dark` class on <html>, toggled by
+   ThemeProvider, instead of Tailwind's default OS-preference media query. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg: #f6f7fb;
+  --surface: #ffffff;
+  --border: #dfe3ec;
+  --ink: #0b1220;
+  --muted: #5b6478;
+  --signal: #e2912a;
+  --signal-foreground: #1a1300;
+  --pulse: #178f69;
+  --pulse-soft: rgba(23, 143, 105, 0.1);
+  --danger: #c43d3d;
+  --grid-dot: rgba(15, 23, 42, 0.06);
+  --credit: #ffa500;
+}
+
+.dark {
+  --bg: #0b1220;
+  --surface: #131b2e;
+  --border: #232c42;
+  --ink: #ecf0f8;
+  --muted: #8893a8;
+  --signal: #ffb347;
+  --signal-foreground: #1a1300;
+  --pulse: #2fc994;
+  --pulse-soft: rgba(47, 201, 148, 0.12);
+  --danger: #ff6b6b;
+  --grid-dot: rgba(255, 255, 255, 0.05);
+  --credit: #ff8c00;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-signal: var(--signal);
+  --color-signal-foreground: var(--signal-foreground);
+  --color-pulse: var(--pulse);
+  --color-pulse-soft: var(--pulse-soft);
+  --color-danger: var(--danger);
+  --color-credit: var(--credit);
+
+  --font-display: var(--font-space-grotesk);
+  --font-body: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--ink);
+  background-image: radial-gradient(circle at 1px 1px, var(--grid-dot) 1px, transparent 0);
+  background-size: 28px 28px;
+  background-attachment: fixed;
+}
+
+::selection {
+  background: var(--signal);
+  color: var(--signal-foreground);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
