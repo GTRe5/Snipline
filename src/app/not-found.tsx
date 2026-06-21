@@ -9,7 +9,7 @@ export default function NotFound() {
         That link doesn&rsquo;t exist.
       </h1>
       <p className="mt-2 max-w-sm text-sm text-muted">
-        The short code you followed isn&rsquo;t in the manifest — it may have been
+        The short code you followed isn&rsquo;t in the manifest - it may have been
         mistyped, or never created.
       </p>
       <Link
