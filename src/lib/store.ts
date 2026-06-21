@@ -16,7 +16,7 @@ export const storageMode: "redis" | "memory" = redis ? "redis" : "memory";
 
 // ---------------------------------------------------------------------------
 // In-memory fallback. Used automatically when UPSTASH_REDIS_REST_URL /
-// UPSTASH_REDIS_REST_TOKEN aren't set — handy for `next dev`, but it resets
+// UPSTASH_REDIS_REST_TOKEN aren't set - handy for `next dev`, but it resets
 // on every restart and isn't shared across serverless instances. Configure
 // Upstash (see .env.example) before relying on this in production.
 // ---------------------------------------------------------------------------
@@ -121,7 +121,7 @@ export async function getManyClicks(codes: string[]): Promise<Record<string, num
 }
 
 // ---------------------------------------------------------------------------
-// Rate limiting — a fixed window per identifier (typically the caller's IP),
+// Rate limiting - a fixed window per identifier (typically the caller's IP),
 // so one address can't flood the manifest with junk links.
 // ---------------------------------------------------------------------------
 

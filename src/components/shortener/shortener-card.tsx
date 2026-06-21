@@ -26,7 +26,7 @@ export function ShortenerCard({ onCreated }: ShortenerCardProps) {
 
     const trimmed = url.trim();
     if (!trimmed) {
-      setError("Paste a link first — that's the part we shorten.");
+      setError("Paste a link first - that's the part we shorten.");
       return;
     }
 
@@ -46,7 +46,7 @@ export function ShortenerCard({ onCreated }: ShortenerCardProps) {
       const data = await res.json();
 
       if (!res.ok) {
-        setError(data.error ?? "Couldn't create that link — try again in a moment.");
+        setError(data.error ?? "Couldn't create that link - try again in a moment.");
         return;
       }
 
@@ -56,7 +56,7 @@ export function ShortenerCard({ onCreated }: ShortenerCardProps) {
       setAlias("");
       setShowAlias(false);
     } catch {
-      setError("Lost the connection — check your network and try again.");
+      setError("Lost the connection - check your network and try again.");
     } finally {
       setLoading(false);
     }

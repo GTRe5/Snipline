@@ -7,7 +7,7 @@ interface SideRailProps {
 }
 
 /**
- * Purely decorative chrome for the empty gutters on wide viewports — a thin
+ * Purely decorative chrome for the empty gutters on wide viewports - a thin
  * guide line and a small vertical label, in the same blueprint/manifest
  * spirit as the dot-grid background and ledger table. Hidden below `lg` so
  * it never competes with content on narrower screens.

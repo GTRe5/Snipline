@@ -14,7 +14,7 @@ type AliasResult = { ok: true } | { ok: false; error: string };
 
 /**
  * Accepts a raw user-typed string, fills in a protocol if missing, and
- * returns a normalized absolute URL — or a plain-language error.
+ * returns a normalized absolute URL - or a plain-language error.
  */
 export function normalizeUrl(input: string): UrlResult {
   const trimmed = input.trim();

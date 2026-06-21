@@ -13,7 +13,7 @@ export function CopyButton({ value }: { value: string }) {
       setCopied(true);
       setTimeout(() => setCopied(false), 1600);
     } catch {
-      // Clipboard API unavailable (e.g. insecure context) — the link text
+      // Clipboard API unavailable (e.g. insecure context) - the link text
       // itself is still selectable, so this just fails quietly.
     }
   }

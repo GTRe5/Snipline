@@ -17,7 +17,7 @@ export async function POST(req: NextRequest) {
   const { allowed } = await checkRateLimit(ip);
   if (!allowed) {
     return NextResponse.json(
-      { error: "Too many links from this address — wait a few minutes and try again." },
+      { error: "Too many links from this address - wait a few minutes and try again." },
       { status: 429 }
     );
   }
@@ -48,7 +48,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: validation.error }, { status: 400 });
     }
     if (await codeExists(alias)) {
-      return NextResponse.json({ error: "That alias is taken — try another." }, { status: 409 });
+      return NextResponse.json({ error: "That alias is taken - try another." }, { status: 409 });
     }
     code = alias;
   } else {

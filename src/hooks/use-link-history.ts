@@ -17,11 +17,11 @@ export function useLinkHistory() {
     try {
       const raw = window.localStorage.getItem(STORAGE_KEY);
       // One-time hydration from localStorage on mount, not a response to a
-      // render — there's no way to read browser storage during SSR/render.
+      // render - there's no way to read browser storage during SSR/render.
       // eslint-disable-next-line react-hooks/set-state-in-effect
       if (raw) setLinks(JSON.parse(raw));
     } catch {
-      // corrupt or inaccessible storage — start fresh
+      // corrupt or inaccessible storage - start fresh
     }
     setIsLoaded(true);
   }, []);
@@ -32,7 +32,7 @@ export function useLinkHistory() {
     try {
       window.localStorage.setItem(STORAGE_KEY, JSON.stringify(links));
     } catch {
-      // storage full or unavailable — history just won't survive a refresh
+      // storage full or unavailable - history just won't survive a refresh
     }
   }, [links, isLoaded]);
 
@@ -45,7 +45,7 @@ export function useLinkHistory() {
   }, []);
 
   // Poll click counts so the ledger reflects redirects that happen
-  // elsewhere — another tab, another device, someone else following the link.
+  // elsewhere - another tab, another device, someone else following the link.
   useEffect(() => {
     if (!isLoaded || links.length === 0) return;
 
@@ -68,7 +68,7 @@ export function useLinkHistory() {
           prev.map((l) => (data.clicks[l.code] !== undefined ? { ...l, clicks: data.clicks[l.code] } : l))
         );
       } catch {
-        // network hiccup — the next interval tick will retry
+        // network hiccup - the next interval tick will retry
       }
     };
 

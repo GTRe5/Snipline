@@ -27,7 +27,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     // One-time sync with what the anti-flash script in the document head
-    // already applied to <html> before hydration — not a state update in
+    // already applied to <html> before hydration - not a state update in
     // response to a render, so the cascading-render concern doesn't apply.
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setTheme(document.documentElement.classList.contains("dark") ? "dark" : "light");
@@ -40,7 +40,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
       try {
         window.localStorage.setItem(STORAGE_KEY, next);
       } catch {
-        // localStorage unavailable (private mode, etc.) — theme just won't persist
+        // localStorage unavailable (private mode, etc.) - theme just won't persist
       }
       return next;
     });
