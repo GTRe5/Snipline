@@ -1,16 +1,16 @@
 import { Redis } from "@upstash/redis";
 import type { LinkRecord } from "./types";
 
+// Vercel's "Upstash for Redis" Marketplace integration injects credentials
+// under the legacy KV_REST_API_* names (left over from the old "Vercel KV"
+// branding), while Upstash's own dashboard / CLI use UPSTASH_REDIS_REST_*.
+// Both point at the same REST API, so we accept either.
 const hasUpstash = Boolean(
-  process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN
+  (process.env.UPSTASH_REDIS_REST_URL || process.env.KV_REST_API_URL) &&
+  (process.env.UPSTASH_REDIS_REST_TOKEN || process.env.KV_REST_API_TOKEN)
 );
 
-const redis = hasUpstash
-  ? new Redis({
-      url: process.env.UPSTASH_REDIS_REST_URL!,
-      token: process.env.UPSTASH_REDIS_REST_TOKEN!,
-    })
-  : null;
+const redis = hasUpstash ? Redis.fromEnv() : null;
 
 export const storageMode: "redis" | "memory" = redis ? "redis" : "memory";
 
