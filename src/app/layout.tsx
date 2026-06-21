@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/context/theme-provider";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { SideRail } from "@/components/side-rail";
 
 const display = Space_Grotesk({
   subsets: ["latin"],
@@ -60,6 +61,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         className={`${display.variable} ${body.variable} ${mono.variable} flex min-h-screen flex-col bg-bg font-body text-ink antialiased transition-colors duration-300`}
       >
         <ThemeProvider>
+          <SideRail side="left" label="SNIPLINE · REAL-TIME URL SHORTENER" />
+          <SideRail side="right" label="CREATED BY GTRE5" tone="credit" />
           <SiteHeader />
           <div className="flex flex-1 flex-col">{children}</div>
           <SiteFooter />
