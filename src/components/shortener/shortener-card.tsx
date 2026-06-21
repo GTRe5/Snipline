@@ -77,7 +77,7 @@ export function ShortenerCard({ onCreated }: ShortenerCardProps) {
               autoCapitalize="off"
               autoCorrect="off"
               spellCheck={false}
-              placeholder="paste a long url — https://example.com/your/very/long/path"
+              placeholder="paste a long url - https://example.com/your/very/long/path"
               value={url}
               onChange={(e) => setUrl(e.target.value)}
               className="w-full bg-transparent font-mono text-[13px] text-ink outline-none placeholder:text-muted/70 sm:text-sm"

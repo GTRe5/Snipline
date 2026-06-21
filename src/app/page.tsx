@@ -15,7 +15,7 @@ export default function HomePage() {
       </h1>
 
       <p className="mt-4 max-w-md text-sm text-muted sm:text-base">
-        Paste a long link, get a short one back instantly — copied, tracked,
+        Paste a long link, get a short one back instantly - copied, tracked,
         and logged below in real time.
       </p>
 

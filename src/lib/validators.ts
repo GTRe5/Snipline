@@ -20,13 +20,13 @@ export function normalizeUrl(input: string): UrlResult {
   const trimmed = input.trim();
 
   if (!trimmed) {
-    return { ok: false, error: "Paste a link first — that's the part we shorten." };
+    return { ok: false, error: "Paste a link first - that's the part we shorten." };
   }
 
   if (trimmed.length > MAX_URL_LENGTH) {
     return {
       ok: false,
-      error: `That link is too long — keep it under ${MAX_URL_LENGTH} characters.`,
+      error: `That link is too long - keep it under ${MAX_URL_LENGTH} characters.`,
     };
   }
 
@@ -54,12 +54,12 @@ export function validateAlias(alias: string): AliasResult {
   if (!ALIAS_PATTERN.test(alias)) {
     return {
       ok: false,
-      error: "Aliases are 3–24 characters: letters, numbers, hyphens, and underscores only.",
+      error: "Aliases are 3-24 characters: letters, numbers, hyphens, and underscores only.",
     };
   }
 
   if (RESERVED_PATHS.has(alias.toLowerCase())) {
-    return { ok: false, error: "That alias is reserved — try another." };
+    return { ok: false, error: "That alias is reserved - try another." };
   }
 
   return { ok: true };

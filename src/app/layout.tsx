@@ -1,10 +1,10 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/context/theme-provider";
-import { SiteFooter } from "@/components/site-footer";
-import { SiteHeader } from "@/components/site-header";
-import { SideRail } from "@/components/side-rail";
+import { ThemeProvider } from "../context/theme-provider";
+import { SiteFooter } from "../components/site-footer";
+import { SiteHeader } from "../components/site-header";
+import { SideRail } from "../components/side-rail";
 
 const display = Space_Grotesk({
   subsets: ["latin"],
@@ -25,11 +25,11 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "snipline — shorten links, instantly",
+  title: "snipline - shorten links, instantly",
   description:
     "A fast, no-nonsense URL shortener. Paste a long link, get a short one back in real time, and keep a live log of every redirect.",
   openGraph: {
-    title: "snipline — shorten links, instantly",
+    title: "snipline - shorten links, instantly",
     description: "Paste a long link, get a short one back in real time.",
     type: "website",
   },
